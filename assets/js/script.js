@@ -5,13 +5,10 @@ $(document).ready(function(){
       $('.btn').click(function() {
         //we are setting the value of the sibling of the '.btn' class that has the '.description' class to a variable
         var description = $(this).siblings('.description').val();
-        //checks to see if there is text in the description variable or not
-        if (description !== '') {
-          //if there is text, we get the attribute of the parent element of the '.btn' class called 'id', and put it in the variable ID
-          var ID= $(this).parent().attr('id');
-          //store the ID and text stored in description to local storage, the ID will be used as the key to call the correct data when setting the text later on 
-          localStorage.setItem(ID, description);
-        }
+        //if there is text, we get the attribute of the parent element of the '.btn' class called 'id', and put it in the variable ID
+        var ID= $(this).parent().attr('id');
+        //store the ID and text stored in description to local storage, the ID will be used as the key to call the correct data when setting the text later on 
+        localStorage.setItem(ID, description);
       });
 
     //added a setinterval function, so that when the time updates, the colors of the rows will also live update
